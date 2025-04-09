@@ -36,6 +36,9 @@ class Chromosome:
             self.tileTypes[i] = random.randint(0, self.NUMTYPES - 1)
             self.tileColours[i] = random.randint(0, self.NUMCOLOURS - 1)
             self.backgroundColour[i] = random.randint(0, self.NUMCOLOURS - 1)
+            # self.tileTypes[i] = 0
+            # self.tileColours[i] = 0
+            # self.backgroundColour[i] = 0
 
     def mutate(self) -> "Chromosome":
         for index in range(self.NUMTILES):
@@ -48,7 +51,7 @@ class Chromosome:
         return self
 
     def charMutation(self, index: int) -> None:
-        mutation: int = max(-5, min(5, round(random.gauss(0, 2))))
+        mutation: int = max(-64, min(64, round(random.gauss(0, 4))))
         new: int = self.tileTypes[index] + mutation
         if new >= self.NUMTYPES:
             new -= self.NUMTYPES
@@ -59,14 +62,14 @@ class Chromosome:
         self.tileTypes[index] = new
 
     def colourMutation(self, index: int) -> None:
-        mutation: int = max(-5, min(5, round(random.gauss(0, 1))))
+        mutation: int = max(-10, min(10, round(random.gauss(0, 3))))
         new: int = (self.tileColours[index] + mutation) % self.NUMCOLOURS
         if new < 0:
             new += self.NUMCOLOURS
         self.tileColours[index] = new
 
     def backgroundMutation(self, index: int = 0) -> None:
-        mutation: int = max(-5, min(5, round(random.gauss(0, 1))))
+        mutation: int = max(-10, min(10, round(random.gauss(0, 3))))
         new: int = (self.backgroundColour[index] + mutation) % self.NUMCOLOURS
         if new < 0:
             new += self.NUMCOLOURS
@@ -76,7 +79,7 @@ class Chromosome:
         child: Chromosome = Chromosome(self.resources)
         index: int = random.randint(0, self.NUMTILES - 1)
         for i in range(self.NUMTILES):
-            if i < index:
+            if random.random() < 0.5:
                 child.tileTypes[i] = self.tileTypes[i]
                 child.tileColours[i] = self.tileColours[i]
                 child.backgroundColour[i] = self.backgroundColour[i]
