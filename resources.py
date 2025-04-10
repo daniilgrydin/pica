@@ -5,7 +5,7 @@ This class loads and processes the target image, PETSCII tiles, and Commodore 64
 for use in the genetic algorithm.
 
 Author: Daniil Grydin
-Date: April 9, 2025
+Date: April 1, 2025
 """
 
 import cv2
