@@ -86,8 +86,8 @@ input file name/location: input/mona.png
 
 5. In the terminal it will print you information about fitness of the best individual, number of the generation, FPS, and runtime.
 ```
-Best Fitness: 281616082.0 [1] FPS 3.99 Time: 0.25
-Best Fitness: 277604389.0 [2] FPS 6.21 Time: 0.41
+Best Fitness: 275381200.0    [Generation: 1]    FPS: 4.24    Total Time: 0.24s
+Best Fitness: 275381200.0    [Generation: 2]    FPS: 7.02    Total Time: 0.38s
 ...
 ```
 
