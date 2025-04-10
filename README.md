@@ -96,7 +96,7 @@ Best Fitness: 275381200.0    [Generation: 2]    FPS: 7.02    Total Time: 0.38s
    - Press `s` to save the best chromosome image (name includes generation, fitness, and timestamp)
 
 > [!NOTE]
-> Every few hundred generations, a snapshot is saved to gif/ for creating a timelapse or evolution animation.
+> Every few hundred generations, a snapshot is saved to `gif/` for creating a timelapse or evolution animation.
 
 ---
 
