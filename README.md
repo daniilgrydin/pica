@@ -100,4 +100,4 @@ Best Fitness: 275381200.0    [Generation: 2]    FPS: 7.02    Total Time: 0.38s
 
 ---
 
-Built with 🧋
+Made with 🧋
