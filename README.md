@@ -13,24 +13,28 @@ Contributors:
 
 ---
 
-## Contents
+## 📦 Contents
 
-- [About](#about)
-- [Examples](#examples)
-- [Installation](#installation)
-- [Usage Guide](#usage-guide)
-
----
-
-## About
-
-**PICA (Progressively Improving Computational Artist)** is a Python-based visual art generator that creates textmode art using a genetic algorithm. Inspired by the aesthetics of PETSCII (Commodore 64's character set), PICA takes any input image, divides it into 8x8 pixel blocks, and evolves a population of representations to approximate the target using character tiles and colors.
-
-This project was created as a final project for a university-level course in Applied Artificial Intelligence. The goal was to explore the use of genetic algorithms in discrete visual tasks and create a system capable of mimicking complex imagery through simple symbols and color palettes.
+- [About](#-about)
+- [Examples](#%EF%B8%8F-examples)
+- [Installation](#%EF%B8%8F-installation)
+- [Usage Guide](#-usage-guide)
 
 ---
 
-## Examples
+## 🧠 About
+
+**PICA** is a genetic algorithm that transforms images into textmode art using the Commodore 64 character set (PETSCII). Each generated image is composed of 8×8 pixel tiles where the algorithm selects the optimal character, foreground, and background color to match a target image.
+
+The system:
+- Uses a population-based evolutionary strategy.
+- Supports crossover and mutation operations.
+- Visually evolves and previews the image in real time.
+- Saves progress frames for creating evolution GIFs.
+
+---
+
+## 🖼️ Examples
 
 | Original | 5,000 Generations | 50,000 Generations | Evolution Gif |
 |:--------:|:-----------------:|:------------------:|:-------------:|
@@ -44,47 +48,41 @@ This project was created as a final project for a university-level course in App
 
 ---
 
-## Installation
+## ⚙️ Installation
 
-### Verify Python Installation
-
-Ensure Python 3.8+ is installed. You can verify with:
-
-```bash
-python --version
-```
-
-### Clone Repo
+### 1. Clone Repo
 
 ```bash
 git clone https://github.com/daniilgrydin/pica.git
 cd pica
 ```
 
-### Install Dependencies
+### 2. Install Dependencies
+
+Ensure you're using Python 3.10+, then:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage Guide
+## 🚀 Usage Guide
 
-1. Put your image into the `resources` folder
+1. Put your image into the `input` folder
 2. Run the main script:
 ```bash
 python main.py
 ```
 3. You’ll be prompted to enter the target image location:
 ```
-input file name/location: resources/mona.png
+input file name/location: input/mona.png
 ```
 
 > [!NOTE]
 > Target images can be any resolution—they’ll be scaled down to 128x128.
 
-4. Two windows will open:
-   - The top six individuals from the population.
-   - A comparison of the best individual to the target image.
+4. Two windows will appear:
+   - **Population**: showing the top 6 candidates
+   - **Best Chromosome**: comparing the current best individual to the target
 
 5. In the terminal it will print you information about fitness of the best individual, number of the generation, FPS, and runtime.
 ```
@@ -94,14 +92,12 @@ Best Fitness: 277604389.0 [2] FPS 6.21 Time: 0.41
 ```
 
 6. Controls:
-   - Press 'q' quit
-   - Press s to save the current best image. (Note: May require multiple attempts.)
+   - Press `q` quit
+   - Press `s` to save the best chromosome image (name includes generation, fitness, and timestamp)
 
-7. Upon quitting, final stats will be printed:
-```
-Best Fitness: 28078022.0 [19323] FPS 5.704176775864132 Time: 3627.7086412906647
-Total time: 3627.7101442813873
-Total generations: 19323
-Average FPS: 5.326499286257991
-Best fitness: 28078022.0
-```
+> [!NOTE]
+> Every few hundred generations, a snapshot is saved to gif/ for creating a timelapse or evolution animation.
+
+---
+
+Built with 🧋
