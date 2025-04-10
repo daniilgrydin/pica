@@ -175,7 +175,9 @@ cython_debug/
 
 # Project specific
 
-gif/*
-output/*
-input/*
-bests
+/gif/*
+!/gif/frame_100.png
+/output/*
+!/output/g328d20250410t002519f93430481.png
+/input/*
+!/input/mona.png
