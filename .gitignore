@@ -173,10 +173,9 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-gif
+# Project specific
 
-*.c
-
-output
-
+gif/*
+output/*
+input/*
 bests
